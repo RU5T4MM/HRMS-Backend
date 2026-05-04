@@ -33,6 +33,11 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/employee', employeeRoutes);
 app.use('/api/notifications', notificationRoutes);
 
+// Default Route for Vercel
+app.get('/', (req, res) => {
+    res.send('HRMS API is running successfully on Vercel! 🚀');
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
