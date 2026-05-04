@@ -14,7 +14,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: true,
     credentials: true
 }));
 app.use(express.json());
@@ -45,3 +45,5 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`));
+
+module.exports = app;
